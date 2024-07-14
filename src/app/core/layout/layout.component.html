@@ -1,0 +1,51 @@
+<div class="layout-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="layout-toolbar">
+    <mat-toolbar-row class="budy-container">
+      <!-- <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button> -->
+
+      <span>Budy Booking</span>
+      <div class="spacer"></div>
+      <div class="auth-links">
+        <a mat-button>Register</a>
+        <a mat-button>Login</a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container
+    class="layout-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 1 : 0"
+  >
+    <mat-sidenav
+      #snav
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+      [opened]="false"
+      [style.width.px]="mobileQuery.matches ? 320 : 200"
+      class=""
+    >
+      <mat-list>
+        <mat-list-item>
+          <a mat-button routerLinkActive="active" routerLink="/user/dashboard"
+            >Dashboard</a
+          >
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button routerLink=".">Booking</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <!-- @for (content of fillerContent; track content) {
+      <p>{{ content }}</p>
+      } -->
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

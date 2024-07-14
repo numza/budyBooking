@@ -1,0 +1,69 @@
+<app-top-nav type="list"></app-top-nav>
+
+<div class="hotel-container">
+  @if (openSlider) {
+  <div class="slider">
+    
+    <button mat-fab (click)="closeSlider()"  class="close">X</button>
+    <button mat-button (click)="prevSlider()" class="navigator">Prev</button>
+    <div class="slider-wrapper">
+      
+      <img [src]="images[slideNum].image" alt="" class="slider-img">
+      <div class="navigation-indicators">
+        @for (item of images; track $index) {
+        <div [class]="slideNum != $index ? 'indicator' : ' indicator active'"></div>
+
+        }
+       
+      </div>
+    </div>
+    <button mat-button (click)="nextSlider()" class="navigator">Next</button>
+  </div>
+  }
+  <div class="hotel-wrapper">
+    <button mat-button class="book-now-btn">Reserve or Book Now!</button>
+    <div class="hotel-title">Grand Hotel</div>
+    <div class="hotel-address">
+      <span>Elton St 125 New york</span>
+    </div>
+    <span class="hotel-distance"> Excellent location - 500m from center </span>
+    <span class="hotel-price-highlight">
+      Book a stay over R114 at this property and get a free airport taxi
+    </span>
+    <div class="hotel-imgs">
+      @for (item of images; track $index) {
+      <div class="hotel-img-wrapper">
+        <img
+          (click)="setSlideNumber($index)"
+          [src]="item.image"
+          alt=""
+          class="hotel-img"
+        />
+      </div>
+
+      }
+    </div>
+    <div class="hotel-details">
+      <div class="hotel-details-texts">
+        <h1 class="hotel-details-title">Stay in the heart of Krakow</h1>
+        <p class="hotel-desc">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, ab.
+          Asperiores ipsum sint, nobis distinctio reprehenderit doloremque ipsam
+          dicta consectetur? Porro nobis labore ratione consectetur voluptatem
+          accusamus optio dolorem quidem aliquam ullam, consequatur maxime
+          expedita facere, voluptates blanditiis commodi sunt illum! Est soluta
+          eaque commodi ex temporibus at unde. Asperiores.
+        </p>
+      </div>
+      <div class="hotel-details-price">
+        <h1>Perfect for a 9-night stay!</h1>
+        <span>
+          Located in the real heart of Krakow, this property has an excellent
+          location score of 9.8!
+        </span>
+        <h2><b>R2000</b> (9 nights)</h2>
+        <button mat-button>Reserve or Book Now!</button>
+      </div>
+    </div>
+  </div>
+</div>

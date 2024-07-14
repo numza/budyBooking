@@ -1,0 +1,79 @@
+.list-container {
+  width: 100%;
+  min-width: 1024px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.list-wrapper {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  gap: 20px;
+  padding: 0px 10px;
+}
+
+.list-search {
+  flex: 1;
+  background-color: #febb02;
+  padding: 10px;
+  border-radius: 10px;
+  height: max-content;
+  position: sticky;
+  top: 10px;
+}
+.ls-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.ls-item>label{
+  font-size: 12px;
+}
+
+.ls-item>input{
+  height: 30px;
+  border: none;
+  padding: 5px;
+}
+.ls-item>span{
+  height: 30px;
+  padding: 5px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.list-title {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 10px;
+}
+.ls-options{
+  padding-left: 10px;
+}
+.ls-option-item{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 12px;
+}
+.ls-option-input{
+  width: 50px;
+  outline: none;
+}
+.ls-btn{
+  width: 100%;
+  color: #fff;
+  background-color: #0071c2;
+  color: #fff;
+  font-weight: 500;
+}
+
+.list-result {
+  flex: 3;
+}

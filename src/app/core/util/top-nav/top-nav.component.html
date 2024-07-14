@@ -1,0 +1,131 @@
+<div class="header">
+  <div class="" [class]="type != 'list' ? 'header-container' : 'header-container list-mode'">
+    <div class="header-list">
+      <div class="header-list-item active-list">
+        <span>Stays</span>
+      </div>
+      <div class="header-list-item">
+        <span>Flights</span>
+      </div>
+      <div class="header-list-item">
+        <span>Car rentals</span>
+      </div>
+      <div class="header-list-item">
+        <span>Attractions</span>
+      </div>
+      <div class="header-list-item">
+        <span>Airport taxis</span>
+      </div>
+    </div>
+    @if (type != "list") {
+    <h1 class="header-title">A lifetime of discounts? It's Genius.</h1>
+    <p class="header-descr">
+      Get rewarded for your travels - unlock instant savings of 10% or more with
+      a free budybooking account 
+    </p>
+    <a mat-flat-button class="header-btn">Sign in / Register</a>
+    <div class="header-search">
+      <div class="header-search-item">
+        
+          <input
+          type="text"
+          placeholder="Where are you going?"
+          class="header-search-input"
+          [(ngModel)]="destination"
+        />
+       
+        
+        
+      </div>
+      
+      <div class="header-search-item">
+        <span class="header-search-text">From </span>
+        <input type="date" class="header-search-input" />
+        &nbsp;
+        <span  class="header-search-text">To </span>
+        <input type="date"  class="header-search-input" />
+      </div>
+      <div class="header-search-item">
+        <span
+          class="header-search-text"
+          (click)="openMenuOptions = !openMenuOptions"
+          >{{
+            options.adultNo +
+              " adult - " +
+              options.childrenNo +
+              " children - " +
+              options.room +
+              " room"
+          }}
+        </span>
+        @if (openMenuOptions) {
+        <div class="options">
+          <div class="option-item">
+            <span class="option-text">Adult</span>
+            <div class="option-counter-container">
+              <button
+                class="option-counter-btn"
+                (click)="subtract(options.adultNo, 'adult')"
+                [disabled]="options.adultNo <= 1"
+              >
+                -
+              </button>
+              <span class="option-counter-number">{{ options.adultNo }}</span>
+              <button
+                class="option-counter-btn"
+                (click)="add(options.adultNo, 'adult')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <div class="option-item">
+            <span class="option-text">Children</span>
+            <div class="option-counter-container">
+              <button
+                class="option-counter-btn"
+                (click)="subtract(options.childrenNo, 'children')"
+                [disabled]="options.childrenNo <= 0"
+              >
+                -
+              </button>
+              <span class="option-counter-number">{{
+                options.childrenNo
+              }}</span>
+              <button
+                class="option-counter-btn"
+                (click)="add(options.childrenNo, 'children')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+          <div class="option-item">
+            <span class="option-text">Room</span>
+            <div class="option-counter-container">
+              <button
+                class="option-counter-btn"
+                (click)="subtract(options.room, 'room')"
+                [disabled]="options.room <= 1"
+              >
+                -
+              </button>
+              <span class="option-counter-number">{{ options.room }}</span>
+              <button
+                class="option-counter-btn"
+                (click)="add(options.room, 'room')"
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      <div class="header-search-item">
+        <button mat-button (click)="handleSearch()" class="header-btn">Search</button>
+      </div>
+    </div>
+    }
+  </div>
+</div>

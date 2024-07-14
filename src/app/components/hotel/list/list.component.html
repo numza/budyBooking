@@ -1,0 +1,61 @@
+
+  <app-top-nav type="list"></app-top-nav>
+  <div class="list-container">
+    <div class="list-wrapper">
+      <div class="list-search">
+        <h1 class="list-title">Search</h1>
+        <div class="ls-item">
+          <label>Destination</label>
+          <input type="text" value="Madrid" />
+        </div>
+        <div class="ls-item">
+          <label>Check-on Date</label>
+          <span>01/01/2024 to 12/02/2024</span>
+          <label>From</label>
+          <input type="date" />
+          <label>To</label>
+          <input type="date" />
+        </div>
+
+        <div class="ls-item">
+          <label>Options</label>
+          <div class="ls-options">
+            <div class="ls-option-item">
+              <span class="ls-option-text">
+                Min price <small>per night</small>
+              </span>
+              <input type="number" min="0" class="ls-option-input" />
+            </div>
+            <div class="ls-option-item">
+              <span class="ls-option-text">
+                Max price <small>per night</small>
+              </span>
+              <input type="number" min="0" class="ls-option-input" />
+            </div>
+            <div class="ls-option-item">
+              <span class="ls-option-text"> Adult </span>
+              <input type="number" min="1" class="ls-option-input" />
+            </div>
+            <div class="ls-option-item">
+              <span class="ls-option-text"> Children </span>
+              <input type="number" min="0" class="ls-option-input" />
+            </div>
+            <div class="ls-option-item">
+              <span class="ls-option-text"> Room </span>
+              <input type="number" min="1" class="ls-option-input" />
+            </div>
+          </div>
+        </div>
+        <button mat-button class="ls-btn" block >Search</button>
+      </div>
+      <div class="list-result">
+        <app-search-item></app-search-item>
+        <app-search-item></app-search-item>
+        <app-search-item></app-search-item>
+        <app-search-item></app-search-item>
+        <app-search-item></app-search-item>
+        <app-search-item></app-search-item>
+        <app-search-item></app-search-item>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,12 @@
+.item {
+
+    &:hover{
+        background-color: rgb(162, 162, 162);
+        
+        cursor: pointer;
+    }
+    div{
+        border-radius: 16px;
+    }
+    
+}
